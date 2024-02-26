@@ -63,7 +63,7 @@ do {
         std::cin >> firstInput;
         std::cout << "Enter your second number." << std::endl;
         std::cin >> secondInput;
-        std::cout << "Your answer is: " << firstInput / secondInput << std::endl;
+        std::cout << "Your answer is: " << (double)firstInput / (double)secondInput << std::endl;
     }
     else {
         std::cout << "Invalid selection. Please use the numbers 1-4 for your selection." << std::endl;
@@ -71,6 +71,7 @@ do {
 
     std::cout << "Do you want to restart? (Y/N)" << std::endl;
     std::cin >> restart;
+
 } while (restart == 'Y' || restart == 'y');
     
     return 0;
