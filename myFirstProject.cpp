@@ -1,4 +1,4 @@
-//myfirstproject.cpp
+//myFirstProject.cpp
 
 #include <iostream>
 #include <cstdlib>
