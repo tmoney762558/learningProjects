@@ -16,10 +16,10 @@ int main() {
     std::cin >> legB;
 
     restart = 'N';
-    legA = pow(legA, 2);
-    legB = pow(legB, 2);
+
+    hypotenuse = sqrt(pow(legA, 2) + pow(legB, 2));
     
-    std::cout << sqrt(legA + legB) << std::endl;
+    std::cout << hypotenuse << std::endl;
 
     std::cout << "Would you like to restart? (Y/N)" << std::endl;
     std::cin >> restart;
