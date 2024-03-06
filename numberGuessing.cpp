@@ -5,30 +5,38 @@ int randNum;
 int guessesCount;
 int guess;
 bool gameOver;
-char replay;
+char replay = 'N';
 
 int main() {
-    
-        std::cout << "Welcome to the Random Number Guessing Game!\n";
-        std::cout << "Guess a number 1-10!\n";
-        std::cin >> guess;
-
+    do {
+        std::cout << "Welcome to the Random Number Guessing Game!" << '\n';
+        std::cout << "Guess a number 1-10!" << '\n';
+        
+        guess = 0;
         srand(time(NULL));
         randNum = (rand() % 10) + 1;
-
         gameOver = false;
-        replay = 'Y';
+        guessesCount = 1;
 
-    do {
-        
+        do {
+            std::cin >> guess;
 
-        if(guess == randNum) {
-        std::cout << "You guessed correctly!\n";
-        gameOver = true;
+            if(guess == randNum) {
+                gameOver = true;
+                guess = 0;
+                std::cout << "You guessed correctly!\n";
+                std::cout << "It took you " << guessesCount << " tries." << '\n';
+
+                std::cout << "Would you like to play again?: (Y/N)" << '\n';
+                std::cin >> replay;
+                break;
         }
-        else if(guess != randNum) {
-        std::cout << "You guessed incorrectly! Try again.\n";
+            else {
+            std::cout << "You guessed incorrectly! Try again." << '\n';
+            guess = 0;
+            guessesCount++;
         }
-    } while(gameOver == false);
-    return 0;
+        } while(gameOver == false);
+    } while (replay == 'Y' || replay == 'y');
+return 0;
 }
