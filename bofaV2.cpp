@@ -1,8 +1,8 @@
 #include <iostream>
 
 void checkBalance(double balance);
-void depositMoney(double deposit, double& balance);
-void withdrawMoney(double withdrawal, double& balance);
+void depositMoney(double& balance);
+void withdrawMoney(double& balance);
 void endProgram(bool& exit);
 
 int main() {
@@ -28,11 +28,11 @@ do {
         break;
     
         case 2:
-        depositMoney(deposit, balance);
+        depositMoney(balance);
         break;
 
         case 3:
-        withdrawMoney(withdraw, balance);
+        withdrawMoney(balance);
         break;
 
         case 4:
@@ -51,7 +51,7 @@ void checkBalance(double balance) {
     std::cout << "Check Balance\n";
     std::cout << "Your balance is: $" << balance << ".\n";
 }
-void depositMoney(double deposit, double& balance) {
+void depositMoney(double& balance) {
     std::cout << "Deposit Money\n";
     std::cout << "How much money would you like to deposit?\n";
     std::cin >> deposit;
@@ -64,7 +64,7 @@ void depositMoney(double deposit, double& balance) {
             std::cout << "Invalid value. Deposits cannot be negative\n";
         }
 }
-void withdrawMoney(double withdraw, double& balance) {
+void withdrawMoney(double& balance) {
     std::cout << "Withdraw Money\n";
     std::cout << "How much money would you like to withdraw?\n";
     std::cin >> withdraw;
