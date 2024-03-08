@@ -7,8 +7,6 @@ void endProgram(bool& exit);
 
 int main() {
     double balance = 0.0;
-    double deposit = 0.0;
-    double withdraw = 0.0;
     int selection;
     bool exit = false;
 
@@ -52,6 +50,8 @@ void checkBalance(double balance) {
     std::cout << "Your balance is: $" << balance << ".\n";
 }
 void depositMoney(double& balance) {
+    double deposit;
+    
     std::cout << "Deposit Money\n";
     std::cout << "How much money would you like to deposit?\n";
     std::cin >> deposit;
@@ -65,6 +65,8 @@ void depositMoney(double& balance) {
         }
 }
 void withdrawMoney(double& balance) {
+    double withdraw;
+    
     std::cout << "Withdraw Money\n";
     std::cout << "How much money would you like to withdraw?\n";
     std::cin >> withdraw;
