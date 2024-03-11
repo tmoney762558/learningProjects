@@ -15,7 +15,7 @@ int main() {
         
         srand(time(NULL));
         randNum = (rand() % 10) + 1;
-        gameOver = false;
+        correctGuess = false;
         guessesCount = 1;
 
         do {
