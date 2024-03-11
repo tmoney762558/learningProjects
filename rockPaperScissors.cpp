@@ -21,20 +21,26 @@ int main() {
         std::cout << "2) PAPER\n";
         std::cout << "3) SCISSORS\n";
         std::cin >> playerThrow;
+        std::cin.clear();
+        fflush(stdin);
         aiThrow = (rand() % 3 + 1);
 
-        switch(playerThrow) {
-            case 1:
-                playerRock(playerThrow, aiThrow, restart);
-                break;
-            case 2:
-                playerPaper(playerThrow, aiThrow, restart);
-                break;
-            case 3:
-                playerScissors(playerThrow, aiThrow, restart);
-                break;
+    switch(playerThrow) {
+        case 1:
+            playerRock(playerThrow, aiThrow, restart);
+            break;
+        case 2:
+            playerPaper(playerThrow, aiThrow, restart);
+            break;
+        case 3:
+            playerScissors(playerThrow, aiThrow, restart);
+            break;
+        default:
+            std::cout << "Invalid selection.\n";
+            break;
     }
     }while(restart == 'Y' || restart == 'y');
+    
     std::cout << "Thank you for playing!\n";
     std::cout << "*******************************\n";
 
