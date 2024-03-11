@@ -18,12 +18,13 @@ int main() {
         correctGuess = false;
         guessesCount = 1;
 
+
         do {
             std::cin >> guess;
 
             if(guess == randNum) {
                 correctGuess = true;
-                std::cin.clear;
+                std::cin.clear();
                 fflush(stdin);
                 std::cout << "You guessed correctly!\n";
                 std::cout << "It took you " << guessesCount << " tries." << '\n';
@@ -34,7 +35,8 @@ int main() {
         }
             else {
             std::cout << "You guessed incorrectly! Try again." << '\n';
-            guess = 0;
+            std::cin.clear();
+            fflush(stdin);
             guessesCount++;
         }
         } while(correctGuess == false);
