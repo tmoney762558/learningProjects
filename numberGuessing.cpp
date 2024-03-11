@@ -4,15 +4,15 @@
 int randNum;
 int guessesCount;
 int guess;
-bool gameOver;
+bool correctGuess;
 char replay = 'N';
 
 int main() {
-    do {
+
         std::cout << "Welcome to the Random Number Guessing Game!" << '\n';
+    do {
         std::cout << "Guess a number 1-10!" << '\n';
         
-        guess = 0;
         srand(time(NULL));
         randNum = (rand() % 10) + 1;
         gameOver = false;
@@ -22,8 +22,9 @@ int main() {
             std::cin >> guess;
 
             if(guess == randNum) {
-                gameOver = true;
-                guess = 0;
+                correctGuess = true;
+                std::cin.clear;
+                fflush(stdin);
                 std::cout << "You guessed correctly!\n";
                 std::cout << "It took you " << guessesCount << " tries." << '\n';
 
@@ -36,7 +37,7 @@ int main() {
             guess = 0;
             guessesCount++;
         }
-        } while(gameOver == false);
+        } while(correctGuess == false);
     } while (replay == 'Y' || replay == 'y');
 return 0;
 }
