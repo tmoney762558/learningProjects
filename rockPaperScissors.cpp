@@ -16,23 +16,23 @@ int main() {
     std::cout << "*******************************\n";
     std::cout << "Welcome to Rock Paper Scissors!\n";
     do {
-    std::cout << "Select your throw!\n";
-    std::cout << "1) ROCK\n";
-    std::cout << "2) PAPER\n";
-    std::cout << "3) SCISSORS\n";
-    std::cin >> playerThrow;
-    aiThrow = (rand() % 3 + 1);
+        std::cout << "Select your throw!\n";
+        std::cout << "1) ROCK\n";
+        std::cout << "2) PAPER\n";
+        std::cout << "3) SCISSORS\n";
+        std::cin >> playerThrow;
+        aiThrow = (rand() % 3 + 1);
 
-    switch(playerThrow) {
-    case 1:
-    playerRock(playerThrow, aiThrow, restart);
-    break;
-    case 2:
-    playerPaper(playerThrow, aiThrow, restart);
-    break;
-    case 3:
-    playerScissors(playerThrow, aiThrow, restart);
-    break;
+        switch(playerThrow) {
+            case 1:
+                playerRock(playerThrow, aiThrow, restart);
+                break;
+            case 2:
+                playerPaper(playerThrow, aiThrow, restart);
+                break;
+            case 3:
+                playerScissors(playerThrow, aiThrow, restart);
+                break;
     }
     }while(restart == 'Y' || restart == 'y');
     std::cout << "Thank you for playing!\n";
