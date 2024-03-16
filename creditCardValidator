@@ -1,0 +1,48 @@
+//creditCardValidator.cpp
+#include <iostream>
+
+void doubleEven(const std::string cardNumber, int &finalSum);
+void sumOdd(const std::string cardNumber, int &finalSum);
+
+int main() {
+    int finalSum = 0;
+
+    std::string cardNumber;
+    std::cout << "Welcome to the Credit Card Authenticator!\n";
+    std::cout << "Enter your card number: \n";
+    std::cin >> cardNumber;
+
+    doubleEven(cardNumber, finalSum);
+    sumOdd(cardNumber, finalSum);
+
+    if(finalSum % 10 == 0) {
+        std::cout << "This credit card is valid!\n";
+    }
+    else {
+        std::cout << "This credit card is invalid!\n";
+    }
+
+    return 0;
+}
+
+void doubleEven(const std::string cardNumber, int &finalSum) {
+    for(int i = (cardNumber.size()-2); i >= 0; i-=2) {
+        int secondDigit;
+        int splitNumber;
+        secondDigit = (cardNumber[i] - '0') * 2;
+        if(secondDigit >= 10) {
+            splitNumber = (secondDigit / 10) + (secondDigit % 10);
+            finalSum+= splitNumber;
+        }
+        else {
+            finalSum+= secondDigit;
+        }
+    }
+}
+void sumOdd(const std::string cardNumber, int &finalSum) {
+    for(int i = cardNumber.size() -1; i >= 0; i-=2) {
+        int secondDigit;
+        secondDigit = (cardNumber[i] - '0');
+        finalSum+= secondDigit;
+    }
+}
