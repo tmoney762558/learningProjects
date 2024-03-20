@@ -51,9 +51,9 @@ void playerMove(char *spaces, char player, char computer) {
     std::cout << "What square do you want to place X into?\n";
     do {
         std::cin >> playerSelection;
-            if (spaces[playerSelection - 1] == computer || spaces[playerSelection - 1] == player) {
+        if (spaces[playerSelection - 1] == computer || spaces[playerSelection - 1] == player) {
                 std::cout << "This square is already occupied. Choose another square.\n";
-            }
+        }
         else {
             spaces[playerSelection - 1] = player;
             drawBoard(spaces);
@@ -67,17 +67,12 @@ void computerMove(char *spaces, char computer, char player) {
     int repeatCheck = 0;
     std::cout << "It is the computers turn.\n";
     do {
-    int computerSelection = (rand() % 9);
-        if (spaces[computerSelection] == computer || spaces[computerSelection] == player) {
-            repeatCheck++;
-        }
-        else {
-            spaces[computerSelection] = computer;
-            drawBoard(spaces);
-            validMove = true;
-        }
+        int computerSelection = (rand() % 9);
+        if (spaces[computerSelection] != computer || spaces[computerSelection] != player)
+                spaces[computerSelection] = computer;
+                drawBoard(spaces);
+                validMove = true;
     } while (validMove == false);
-
 }
 bool checkWinner(char *spaces, char player, char computer, bool &gameOver) {
     if(spaces[0] == 'X' && spaces[1] == 'X' && spaces[2] == 'X') {
