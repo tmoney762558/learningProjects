@@ -67,7 +67,7 @@ void computerMove(char *spaces, char computer, char player) {
     int repeatCheck = 0;
     std::cout << "It is the computers turn.\n";
     do {
-    int computerSelection = (rand() % 8);
+    int computerSelection = (rand() % 9);
         if (spaces[computerSelection] == computer || spaces[computerSelection] == player) {
             repeatCheck++;
         }
