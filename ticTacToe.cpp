@@ -68,7 +68,7 @@ void computerMove(char *spaces, char computer, char player) {
     std::cout << "It is the computers turn.\n";
     do {
         int computerSelection = (rand() % 9);
-        if (spaces[computerSelection] != computer || spaces[computerSelection] != player)
+        if (spaces[computerSelection] != computer && spaces[computerSelection] != player)
                 spaces[computerSelection] = computer;
                 drawBoard(spaces);
                 validMove = true;
