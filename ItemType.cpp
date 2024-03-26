@@ -17,3 +17,7 @@ RelationType ItemType::ComaredTo(ItemType otherItem) const {
 void ItemType::Initialize(int number) }
   value = number;
 }
+
+void ItemType::Print(std::ofstream &out) const {
+  out << value << " ";
+}
