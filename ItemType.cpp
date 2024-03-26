@@ -14,4 +14,6 @@ RelationType ItemType::ComaredTo(ItemType otherItem) const {
     return EQUAL;
   }
 
-void 
+void ItemType::Initialize(int number) }
+  value = number;
+}
