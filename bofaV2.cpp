@@ -57,12 +57,12 @@ void depositMoney(double deposit, double& balance) {
     std::cout << "How much would you like to deposit?\n";
     std::cin >> deposit;
     balance += deposit;
-        if(deposit > 0) {
+        if(deposit >= 0) {
             std::cout << "You deposited $" << deposit << ".\n";
             checkBalance(balance);
         }
         else {
-            std::cout << "Invalid value. Deposits cannot be negative\n";
+            std::cout << "Invalid value. Deposits cannot be negative!\n";
         }
 }
 void withdrawMoney(double withdraw, double& balance) {
