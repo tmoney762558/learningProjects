@@ -1,4 +1,4 @@
-#include <fstrea>
+#include <fstream>
 #include "ItemType.h"
 ItemType::ItemType() {
   value = 0;
