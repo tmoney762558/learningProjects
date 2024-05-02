@@ -141,3 +141,5 @@ int main() {
 
     return 0;
 }
+
+// Should replace some of these if statenents with a switch.
